@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR FOR JS PRACTICE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: rgb(124, 124, 140);
+            font-size: 16px;
+        }
+        .container {
+            position: relative;
+            width: 400px;
+            border: 1px solid transparent;
+            background-color: #1C1C1C;
+            margin: 50px auto;
+            text-align: center;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        .input-display {
+            color: #fff;
+            text-align: right;
+            font-size: 40px;
+            font-weight: 600;
+            margin: 5px 40px;
+        }
+        /* .cal-result {
+            
+        }
+        .numbers {
+
+        } */
+        button {
+            margin: 2px;
+            border-radius: 50%;
+            border: none;
+            font-size: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            font-weight: 500;
+            aspect-ratio: 1;
+            width: 80px;
+            color: #fff;
+            background-color: #505050;
+        }
+        .zero {
+            width: 180px;
+            aspect-ratio: 0;
+            border-radius: 35px;
+            text-align: left;
+            padding: 5px;
+            padding: 17px 15px ;
+        }
+        .divide, .multiply, .minus, .plus, .equalTo {
+            background-color: #FF9500;
+            color: #fff;
+            font-weight: 700;
+            font-size: 35px;
+        } 
+        .clear, .plus-minus, .percentage {
+            background-color: #D4D4D2;
+            color: #000;
+        }
+        @media only screen and (max-width: 480px){
+            .container {
+                width: 100%;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="calculator">
+            <div class="cal-result"> <br> <br></div>
+            <div class="input-display"><br>0</div>
+            <div class="numbers">
+                <button class="clear" id="clear">AC</button>
+                <button class="plus-minus" id="plus-minus">+/-</button>
+                <button class="percentage" id="percentage">%</button>
+                <button class="divide" id="divide">÷</button>
+                <button class="one" id="one">1</button>
+                <button class="two" id="two">2</button>
+                <button class="three" id="three">3</button>
+                <button class="multiply" id="multiply">×</button>
+                <button class="four" id="four">4</button>
+                <button class="five" id="five">5</button>
+                <button class="six" id="six">6</button>
+                <button class="minus" id="minus">-</button>
+                <button class="seven" id="seven">7</button>
+                <button class="eight" id="eight">8</button>
+                <button class="nine" id="nine">9</button>
+                <button class="plus" id="plus">+</button>
+                <button class="zero" id="zero">0</button>
+                <button>.</button>
+                <button class="equalTo" id="equalTo">=</button>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>
