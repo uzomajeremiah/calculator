@@ -19,24 +19,32 @@
             position: relative;
             width: 400px;
             border: 1px solid transparent;
-            background-color: #000000;
+            background-color: #1C1C1C;
             margin: 50px auto;
             text-align: center;
             padding: 5px;
             border-radius: 10px;
-            padding-bottom: 50px;
         }
         .input-display {
+            color: #fff;
+            text-align: right;
+            font-size: 35px;
+            font-weight: 600;
+            margin: 5px 40px;
+            height: 50px;
+            overflow: hidden;
+            
+        }
+        .cal-result {
             color: #fff;
             text-align: right;
             font-size: 40px;
             font-weight: 600;
             margin: 5px 40px;
+            height: 50px;
+            overflow: hidden;
         }
-        /* .cal-result {
-            
-        }
-        .numbers {
+        /* .numbers {
 
         } */
         button {
@@ -47,19 +55,19 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
             font-weight: 500;
-            aspect-ratio: 1;
+            /* aspect-ratio: 1; */
             width: 80px;
             height: 80px;
             color: #fff;
             background-color: #505050;
         }
         .zero {
-            width: 155px;
+            width: 180px;
             aspect-ratio: 0;
             border-radius: 35px;
             text-align: left;
             padding: 5px;
-            padding: 0 15px ;
+            padding: 17px 15px ;
         }
         .divide, .multiply, .minus, .plus, .equalTo {
             background-color: #FF9500;
@@ -75,7 +83,6 @@
             .container {
                 width: 100%;
                 margin: 0;
-                position: fixed;
             }
         }
     </style>
@@ -84,33 +91,85 @@
     <div class="container">
 
         <div class="calculator">
-            <div class="cal-result"> <br> <br></div>
-            <div class="input-display"><br>0</div>
+            <div class="cal-result" id="cal-result"></div>
+            <div class="input-display" id="input-display"></div>
             <div class="numbers">
-                <button class="clear" id="clear">AC</button>
-                <button class="plus-minus" id="plus-minus">+/-</button>
-                <button class="percentage" id="percentage">%</button>
-                <button class="divide" id="divide">÷</button>
-                <button class="one" id="one">1</button>
-                <button class="two" id="two">2</button>
-                <button class="three" id="three">3</button>
-                <button class="multiply" id="multiply">×</button>
-                <button class="four" id="four">4</button>
-                <button class="five" id="five">5</button>
-                <button class="six" id="six">6</button>
-                <button class="minus" id="minus">-</button>
-                <button class="seven" id="seven">7</button>
-                <button class="eight" id="eight">8</button>
-                <button class="nine" id="nine">9</button>
-                <button class="plus" id="plus">+</button>
-                <button class="zero" id="zero">0</button>
-                <button>.</button>
-                <button class="equalTo" id="equalTo">=</button>
+                <button class="clear" id="clear" onclick="
+                    calculation = '';
+                    display()
+                ">AC</button>
+                <button class="plus-minus" id="plus-minus" onclick="
+                    updateCalculation('-') ;
+                ">+/-</button>
+                <button class="percentage" id="percentage" onclick="
+                    calculation = eval(`${calculation}/100`)
+                    display1()
+                ">%</button>
+                <button class="divide" id="divide" onclick="
+                    updateCalculation('÷') ;
+                ">÷</button>
+                <button class="one" id="one" onclick="
+                    updateCalculation(1) ;
+                ">1</button>
+                <button class="two" id="two" onclick="
+                    updateCalculation(2) ;
+                ">2</button>
+                <button class="three" id="three" onclick="
+                    updateCalculation(3) ;
+                ">3</button>
+                <button class="multiply" id="multiply" onclick="
+                    updateCalculation('*') ;
+                ">×</button>
+                <button class="four" id="four" onclick="
+                    updateCalculation(4) ;
+                ">4</button>
+                <button class="five" id="five" onclick="
+                    updateCalculation(5) ;
+                ">5</button>
+                <button class="six" id="six" onclick="
+                    updateCalculation(6) ;
+                ">6</button>
+                <button class="minus" id="minus" onclick="
+                    updateCalculation('-') ;
+                ">-</button>
+                <button class="seven" id="seven" onclick="
+                    updateCalculation(7) ;
+                ">7</button>
+                <button class="eight" id="eight" onclick="
+                    updateCalculation(8);
+                ">8</button>
+                <button class="nine" id="nine" onclick="
+                    updateCalculation(9);
+                ">9</button>
+                <button class="plus" id="plus" onclick="
+                    updateCalculation('+');
+                ">+</button>
+                <button class="zero" id="zero" onclick="
+                    updateCalculation(0);
+                ">0</button>
+                <button class="dot" id="dot" onclick="
+                    updateCalculation('.');
+                ">.</button>
+                <button class="equalTo" id="equalTo" onclick="
+                    document.getElementById('cal-result').textContent = eval(calculation);
+                ">=</button>
             </div>
         </div>
     </div>
     <script>
-
+        let calculation = '';
+        function updateCalculation(value) {
+            calculation += value;
+            document.getElementById('input-display').textContent = calculation;
+        }
+        function display() {
+            document.getElementById('input-display').textContent = calculation;
+            document.getElementById('cal-result').textContent = calculation;
+        }
+        function display1() {
+            document.getElementById('input-display').textContent = calculation;
+s
+        }
     </script>
 </body>
 </html>
