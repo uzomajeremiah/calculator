@@ -16,14 +16,13 @@
             font-size: 16px;
         }
         .container {
-            position: relative;
+            position: static;
             width: 400px;
             border: 1px solid transparent;
-            background-color: #1C1C1C;
-            margin: 50px auto;
+            background-color: #000;
+            margin: 0px auto;
             text-align: center;
             padding: 5px;
-            /* border-radius: 10px; */
         }
         .input-display {
             color: #fff;
@@ -44,9 +43,9 @@
             height: 50px;
             overflow: hidden;
         }
-        /* .numbers {
-
-        } */
+        .CAL {
+            height: 50px;
+        }
         button {
             margin: 7px;
             border-radius: 50%;
@@ -55,18 +54,16 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
             font-weight: 500;
-            /* aspect-ratio: 1; */
             width: 75px;
             height: 75px;
             color: #fff;
             background-color: #505050;
         }
         .zero {
-            width: 180px;
+            width: 175px;
             aspect-ratio: 0;
             border-radius: 35px;
             text-align: left;
-            padding: 5px;
             padding: 17px 15px ;
         }
         .divide, .multiply, .minus, .plus, .equalTo {
@@ -114,8 +111,9 @@
     <div class="container">
 
         <div class="calculator">
-            <div class="cal-result" id="cal-result"></div>
-            <div class="input-display" id="input-display"></div>
+          <div class="CAL"></div>
+          <div class="cal-result" id="cal-result"></div>
+          <div class="input-display" id="input-display"></div>
             <div class="numbers">
                 <button class="clear" id="clear" onclick="
                     calculation = '';
